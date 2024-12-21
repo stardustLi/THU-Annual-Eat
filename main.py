@@ -4,6 +4,13 @@ import base64
 import json
 import matplotlib.pyplot as plt
 import requests
+from matplotlib import rcParams
+
+# 设置字体
+rcParams['font.sans-serif'] = ['Microsoft YaHei']  # 设置支持中文的字体，例如黑体
+rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
+
+# 重新绘图后中文将不再乱码
 
 def decrypt_aes_ecb(encrypted_data: str) -> str:
     
@@ -62,7 +69,7 @@ if __name__ == "__main__":
     print(len(all_data))
     # 输出结果
     all_data = dict(sorted(all_data.items(), key=lambda x: x[1], reverse=False))
-    plt.rcParams['font.sans-serif'] = ['SimHei']
+    # plt.rcParams['font.sans-serif'] = ['SimHei']
     plt.figure(figsize=(12, len(all_data) / 66 * 18))
     plt.barh(list(all_data.keys()), list(all_data.values()))
     for index, value in enumerate(list(all_data.values())):
