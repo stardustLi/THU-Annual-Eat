@@ -1,6 +1,10 @@
 # User data
 config.json
 result.png
+main_bak.py
+try*
+try2.py
+try*.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
