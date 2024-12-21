@@ -5,6 +5,7 @@ main_bak.py
 try*
 try2.py
 try*.py
+# token.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
