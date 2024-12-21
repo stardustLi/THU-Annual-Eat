@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import requests
 from matplotlib import rcParams
 from collections import defaultdict
+from login import get_cookie
 
 # 设置字体
 rcParams['font.sans-serif'] = ['Microsoft YaHei']  # 设置支持中文的字体，例如黑体
@@ -101,7 +102,14 @@ if __name__ == "__main__":
     except Exception as e:
         print("账户信息读取失败，请重新输入")
         idserial = input("请输入学号: ")
-        servicehall = input("请输入服务代码: ")
+        use_script = input("是否使用脚本自动获取 Cookie？(y/n): ").strip().lower()
+        print("警告：该脚本会关闭所有 Edge 浏览器窗口并重新打开，如果你的浏览器中有重要信息，请提前保存。按Ctrl+C退出脚本。")
+        if use_script == 'y':
+            username = input("请输入用户名（如果你的浏览器会自动填入用户名，请直接回车): ")
+            password = input("请输入密码（如果你的浏览器会自动填入用户名，请直接回车): ")
+            servicehall = get_cookie(username, password)
+        else:
+            servicehall = input("请输入服务代码: ")
         with open("config.json", "w", encoding='utf-8') as f:
             json.dump({"idserial": idserial, "servicehall": servicehall}, f, indent=4)
     
