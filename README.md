@@ -10,7 +10,7 @@
 
 ## 使用方法
 
-### 0. 获取服务代码
+### 0. 获取服务代码(拥有EDGE的Windows用户可跳过这一步)
 
 首先，登录校园卡账号后，在[华清大学校园卡网站](https://card.tsinghua.edu.cn/userselftrade)获取你的服务代码。
 
@@ -27,7 +27,7 @@
 本项目依赖于 `requests`、`matplotlib` 和 `pycryptodome`，请确保你的 Python 环境中已经安装了这些库。
 
 ```bash
-pip install requests matplotlib pycryptodome
+pip install requests matplotlib pycryptodome selenium
 ```
 
 > 你可能需要在 `Python\Python312\Lib\site-packages` 目录下将 `crypto` 文件夹改名为 `Crypto`。

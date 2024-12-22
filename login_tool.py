@@ -50,6 +50,3 @@ def get_cookie(username, password):
     if platform.system() == 'Windows':
         os.system("taskkill /f /im msedge.exe")
     return cookie
-
-if __name__ == '__main__':
-    get_cookie()

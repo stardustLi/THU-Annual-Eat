@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import requests
 from matplotlib import rcParams
 from collections import defaultdict
-from login import get_cookie
+from login_tool import get_cookie
 
 # 设置字体
 rcParams['font.sans-serif'] = ['Microsoft YaHei']  # 设置支持中文的字体，例如黑体

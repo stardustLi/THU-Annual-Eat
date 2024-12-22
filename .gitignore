@@ -1,5 +1,5 @@
 # User data
-config.json
+*.json
 result.png
 main_bak.py
 try*
